@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'android-library'
 
 android {
     compileSdkVersion 28
     buildToolsVersion '28.0.2'
 
     defaultConfig {
-        applicationId 'org.traccar.manager'
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 18
@@ -31,10 +30,10 @@ if (getGradle().getStartParameter().getTaskRequests().toString().contains('Googl
     apply plugin: 'io.fabric'
 
     task copyJson(type: Copy) {
-        from '../../traccar-shared/google-services'
+        from '../../machhindra-shared/google-services'
         into '.'
-        include 'traccar-manager-android.json'
-        rename('traccar-manager-android.json', 'google-services.json')
+        include 'machhindra-manager-android.json'
+        rename('machhindra-manager-android.json', 'google-services.json')
     }
 
     afterEvaluate {
